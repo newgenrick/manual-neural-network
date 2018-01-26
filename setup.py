@@ -96,4 +96,13 @@ class Session():
             if type(node.output) == list:
                 node.output = np.array(node.output)
         return operation.output
-                
+
+g = Graph()
+g.set_defaut_graph()
+A = Variable(10)
+B = Variable(1)
+x = Placeholder()
+p = multiply(A,x)
+q = add(p,B)
+sess = Session()
+sess.run(q,feed_dict = {x:10})
